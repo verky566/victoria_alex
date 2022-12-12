@@ -16,33 +16,30 @@
 				<span class="material-icons">home</span>
 				<span class="text">Home</span>
 			</router-link>
-			<router-link to="/about" class="button">
-				<span class="material-icons">description</span>
-				<span class="text">About</span>
-			</router-link>
 			<router-link to="/biography" class="button">
-				<span class="material-icons">group</span>
-				<span class="text">Team</span>
+				<span class="material-icons">description</span>
+				<span class="text">Biography</span>
 			</router-link>
 			<router-link to="/interests" class="button">
-				<span class="material-icons">email</span>
-				<span class="text">interests</span>
+				<span class="material-icons">group</span>
+				<span class="text">Interests</span>
 			</router-link>
-            <router-link to="/interests" class="button">
+		
+            <router-link to="/contact" class="button">
 				<span class="material-icons">email</span>
-				<span class="text">contact</span>
+				<span class="text">Contact Me</span>
 			</router-link>
-            <router-link to="/interests" class="button">
+            <router-link to="/resume" class="button">
 				<span class="material-icons">email</span>
-				<span class="text">resume</span>
+				<span class="text">Resume</span>
 			</router-link>
-            <router-link to="/interests" class="button">
+            <router-link to="/photos" class="button">
 				<span class="material-icons">email</span>
-				<span class="text">photos</span>
+				<span class="text">Photos</span>
 			</router-link>
-            <router-link to="/interests" class="button">
+            <router-link to="/skills" class="button">
 				<span class="material-icons">email</span>
-				<span class="text">skills</span>
+				<span class="text">Skills</span>
 			</router-link>
 		</div>
 
@@ -77,7 +74,8 @@ aside {
 	background-color: var(--dark);
 	color: var(--light);
 
-	width: calc(2rem + 32px);
+    //icon size is 32px
+	width: calc(2rem + 32px); 
 	overflow: hidden;
 	min-height: 100vh;
 	padding: 1rem;
