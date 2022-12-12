@@ -17,7 +17,7 @@
 				<span class="text">Home</span>
 			</router-link>
 			<router-link to="/biography" class="button">
-				<span class="material-icons">description</span>
+				<span class="material-icons">auto_stories</span>
 				<span class="text">Biography</span>
 			</router-link>
 			<router-link to="/interests" class="button">
@@ -30,15 +30,15 @@
 				<span class="text">Contact Me</span>
 			</router-link>
             <router-link to="/resume" class="button">
-				<span class="material-icons">email</span>
+				<span class="material-icons">description</span>
 				<span class="text">Resume</span>
 			</router-link>
             <router-link to="/photos" class="button">
-				<span class="material-icons">email</span>
+				<span class="material-icons">image</span>
 				<span class="text">Photos</span>
 			</router-link>
             <router-link to="/skills" class="button">
-				<span class="material-icons">email</span>
+				<span class="material-icons">code</span>
 				<span class="text">Skills</span>
 			</router-link>
 		</div>
