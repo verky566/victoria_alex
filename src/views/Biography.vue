@@ -4,10 +4,8 @@
 
 <template>
   <main>
-    <!-- <TheWelcome /> -->
     <TheWelcome />
-    <h1>Home</h1>
-    <p>This is the home page</p>
+    <h1>Biography</h1>
+    <p>This is the biography page</p>
   </main>
 </template>
-
