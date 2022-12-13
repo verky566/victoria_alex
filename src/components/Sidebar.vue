@@ -1,7 +1,7 @@
 <template>
 	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div class="logo">
-			<img :src="logoURL" alt="Vue" /> 
+			<img :src="logoURL" alt="Victoria-Alex" /> 
 		</div>
 
 		<div class="menu-toggle-wrap">
@@ -57,6 +57,7 @@
 <script setup>
 import { ref } from 'vue'
 import logoURL from '../assets/logo.svg'
+//import logoURL from '../assets/victoria_alex_logo.png' // Change logo
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
@@ -66,9 +67,12 @@ const ToggleMenu = () => {
 }
 </script>
 
+
+
+
 <style lang="scss" scoped>
 aside {
-	display: flex;
+	display: flex;              //after going above 1024px
 	flex-direction: column;
 
 	background-color: var(--dark);

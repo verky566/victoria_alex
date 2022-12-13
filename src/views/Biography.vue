@@ -6,7 +6,7 @@
 <template>
   <main>
   <div class="biography">
-    <TheWelcome />
+ <!-- <TheWelcome />  -->
     <h1>Biography</h1>
     <p>This is the Biography page</p>
 

@@ -1,17 +1,18 @@
+<template>
+  
+  <div class="app">
+  <Sidebar />
+<RouterView />
+
+  </div>
+</template>
+
 <script setup> 
+//This is display the UI accross multiple pages. 
 import Sidebar from './components/Sidebar.vue'
 </script>
 
-<template>
-    <div class="app">
 
-  <Sidebar />
-  <RouterView />
-    </div>
-
-
-
-</template>
 
 <style lang="scss">
 :root {
@@ -41,7 +42,7 @@ button {
 }
 
 .app {
-	display: flex;
+	display: flex; //body turns into flex
 	main {
 		flex: 1 1 0;
 		padding: 2rem;
