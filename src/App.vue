@@ -43,9 +43,11 @@ button {
 
 .app {
 	display: flex; //body turns into flex
+
 	main {
 		flex: 1 1 0;
 		padding: 2rem;
+
 		@media (max-width: 1024px) {
 			padding-left: 6rem;
 		}
@@ -53,3 +55,4 @@ button {
 }
 </style>
 
+//(min-width: 300px)

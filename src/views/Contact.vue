@@ -1,120 +1,87 @@
-
-
 <template>
-    <div id="app">
-      <form id="contact-form" @submit="onSubmitHandler($event)">
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Enter email"
-            v-model="email"
-          />
+    <body>
+        
+  
+     <main>
+    <div class="app">
+      <form @submit.prevent="handleSubmit" class="checkout-form">
+        <h1>Contact Me!</h1>
+        <div class="address__field">
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" v-model="form.firstName" required />
         </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input
-            type="text"
-            class="form-control"
-            id="subject"
-            placeholder="Subject"
-            v-model="subject"
-          />
+        <div class="address__field">
+          <label for="lastName">Last name</label>
+          <input type="text" id="lastName" v-model="form.lastName" required />
         </div>
-        <div class="form-group">
-          <label for="comments">Comments</label>
-          <textarea
-            class="form-control"
-            id="comments"
-            rows="3"
-            v-model="comments"
-          ></textarea>
+        <div class="address__field">
+          <label for="email">Email</label>
+          <input type="email" id="email" v-model="form.email" required />
         </div>
-        <button type="submit" class="btn btn-primary">
-          Submit
-        </button>
+        <div class="address__field">
+          <label for="phone">Phone</label>
+          <input type="phone" id="phone" v-model="form.phone" required />
+        </div>
+
+        <ContactFields
+          label="PhoneNumbers"
+          v-model:primary="form.PhoneNumbers.streetName"
+          v-model:secondary="form.PhoneNumbers.streetNumber"
+          v-model:city="form.billingAddress.city"
+          v-model:postcode="form.billingAddress.postcode"
+        />
+        <!-- <ContactFields
+          label="Delivery Address"
+          v-model:streetName="form.deliveryAddress.streetName"
+          v-model:streetNumber="form.deliveryAddress.streetNumber"
+          v-model:city="form.deliveryAddress.city"
+          v-model:postcode="form.deliveryAddress.postcode"
+        /> -->
+        <div class="address__field">
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
+</main>
+</body>
   </template>
+  
 
-
-<script>
-
-
-
-import { ref } from 'vue'
-const value = ref('')
-
-
-
-
+  <script>
+  import ContactFields from "../components/ContactFields.vue";
+  
+  import { reactive } from "vue";
+  
   export default {
-    name: 'App',
-    data() {
-      return {
-        email: '',
-        subject: '',
-        comments: '',
-      };
+    name: "CheckoutForm",
+    components: {
+        ContactFields: ContactFields,
     },
     methods: {
-      onEmailChange(event) {
-        this.email = event.target.value;
-      },
-      onSubjectChange(event) {
-        this.subject = event.target.value;
-      },
-      onCommentsChange(event) {
-        this.comments = event.target.value;
-      },
-      resetForm() {
-        this.email = '';
-        this.subject = '';
-        this.comments = '';
-      },
-      onSubmitHandler(event) {
-        event.preventDefault();
-        let data = {
-          email: this.email,
-          subject: this.subject,
-          comments: this.comments,
-        };
-        fetch('http://localhost:3002/send', {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-        })
-          .then((response) => response.json())
-          .then((response) => {
-            if (response.status === 'success') {
-              alert('Message Sent.');
-              // this.resetForm();
-            } else if (response.status === 'fail') {
-              alert('Message failed to send.');
-            }
-          });
+      handleSubmit() {
+        alert("Thank you for your submission!");
       },
     },
+    setup() {
+      const form = reactive({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+        Phone: {
+          primary: "",
+          secondary: "",
+        },
+      });
+  
+      return {
+        form,
+      };
+    },
   };
-</script>
+  </script>
+  
 
 
-<style lang="scss">
-
-.form-inline .form-group {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex: 0 0 auto;
-      flex: 0 0 auto;
-      -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-      -ms-flex-align: center;
-      align-items: center;
-      margin-bottom: 0;
-    }
-</style>
+ 

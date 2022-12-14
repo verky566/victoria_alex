@@ -1,4 +1,6 @@
 <template>
+    <!-- aside element -->
+    
 	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div class="logo">
 			<img :src="logoURL" alt="Victoria-Alex"/> 
@@ -67,10 +69,11 @@ const ToggleMenu = () => {
 	localStorage.setItem("is_expanded", is_expanded.value)
 }
 </script>
-<!--The style scoped attribute limits CSS to this component only -->
 
+<!--The style scoped attribute limits CSS to this component only -->
 <style lang="scss" scoped>
-aside {
+
+    aside {
 	display: flex;              //after going above 1024px
 	flex-direction: column;
 
@@ -213,6 +216,7 @@ aside {
 
 	@media (max-width: 1024px) {
 		position: absolute;
+        //z-index - overlapping layers z-axis
 		z-index: 99;
 	}
 }

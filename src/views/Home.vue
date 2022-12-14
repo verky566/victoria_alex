@@ -3,11 +3,13 @@
 </script>
 
 <template>
+  <body>
+    
+
   <main>
-    <!-- <TheWelcome /> -->
-    <TheWelcome />
     <h1>Home</h1>
     <p>This is the home page</p>
   </main>
+</body>
 </template>
 

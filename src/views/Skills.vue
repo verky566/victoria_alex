@@ -3,9 +3,15 @@
 </script>
 
 <template>
-  <main>
+       <body>
+        <main>
+        <div id="app">
+ 
     <h1>Skills</h1>
     <p>This is the Skills page</p>
+</div>
   </main>
+
+  </body>
 </template>
 

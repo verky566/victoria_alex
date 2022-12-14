@@ -7,18 +7,18 @@ import Photos from "../components/Photos.vue";
 </script>
 
 <template>
-  <main>
+
     <body>
+        <main>
+            <div id="app">
     <h1>Photos</h1>
     <p>This is the Photos page</p>
 
-    <div id="app">
     <Photos />
-   <!-- Dynamic components-->
-      <!-- <component :is="Photos"></component>    -->
+
       </div>
-      </body>
   </main>
+</body>
 </template>
 
 

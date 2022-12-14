@@ -3,11 +3,14 @@
 </script>
 
 <template>
-  <main>
-    <!-- <TheWelcome /> -->
+    <body>
+        <main>
+            <div id="app">
     <TheWelcome />
     <h1>Resume</h1>
     <p>This is the Resume page</p>
+    </div>
   </main>
+  </body>
 </template>
 
