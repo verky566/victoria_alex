@@ -1,106 +1,120 @@
-<script setup>
-//import TheWelcome from "../components/TheWelcome.vue";
-</script>
+
 
 <template>
-  <main>
-    <body id="page-top">
-    <!-- <TheWelcome /> -->
-
-    <h1>Contact</h1>
-    <p>This is the Contact page</p>
-
-  
-    <div id="root">
-      <vue-form></vue-form>
+    <div id="app">
+      <form id="contact-form" @submit="onSubmitHandler($event)">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email"
+            v-model="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            class="form-control"
+            id="subject"
+            placeholder="Subject"
+            v-model="subject"
+          />
+        </div>
+        <div class="form-group">
+          <label for="comments">Comments</label>
+          <textarea
+            class="form-control"
+            id="comments"
+            rows="3"
+            v-model="comments"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
     </div>
+  </template>
 
-    
-</body>
-  </main>
-</template>
 
-<script> 
+<script>
 
-Vue.component("vue-form", {
-    template: `
-  <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="column">
-        <div class="section-heading">
-          <h3 class="title is-2 has-text-black has-text-centered">Contact US</h3>
-          <h4 class="subtitle is-5 has-text-black has-text-centered">Get in touch</h4>
-        </div>
-        <br>
-  
-        <div class="columns">
-          <div class="column is-6 is-offset-3">
-            <div class="box">
-              <div class="field">
-                <label class="label">Name</label>
-                <div class="control has-icons-left">
-                  <input class="input" type="text" placeholder="e.g John Doe" value="">
-                  <span class="icon is-small is-left">
-                    <i class="fa fa-user"></i>
-                  </span>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label class="label">Email</label>
-                <div class="control has-icons-left">
-                  <input class="input" type="email" placeholder="e.g johndoe@gmail.com" value="">
-                  <span class="icon is-small is-left">
-                    <i class="fa fa-envelope"></i>
-                  </span>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label class="label">Phone</label>
-                <div class="control has-icons-left">
-                  <input class="input" type="phone" placeholder="e.g 5551234567" value="">
-                  <span class="icon is-small is-left">
-                    <i class="fa fa-phone"></i>
-                  </span>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label class="label">Message</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Your Message"></textarea>
-                  </span>
-                </div>
-              </div>
-  
-              <div class="field is-grouped has-text-centered">
-                <div class="control">
-                  <button class="button is-danger is-large"><span class="icon">
-                      <i class="fa fa-envelope"></i>
-                    </span>
-                    <span>Submit</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-    </section>
-      `,
-      
-    mounted() {
-      var contactform = document.getElementById("contactform");
-      contactform.setAttribute(
-        "action",
-        "//formspree.io/" + "xxxxxxxxxxxxxx" + "@" + "xxxxxxxxx" + "." + "com"
-      );
-    }
-  });
-  
-  new Vue({
-    el: "#root"
-  });
 
+
+import { ref } from 'vue'
+const value = ref('')
+
+
+
+
+  export default {
+    name: 'App',
+    data() {
+      return {
+        email: '',
+        subject: '',
+        comments: '',
+      };
+    },
+    methods: {
+      onEmailChange(event) {
+        this.email = event.target.value;
+      },
+      onSubjectChange(event) {
+        this.subject = event.target.value;
+      },
+      onCommentsChange(event) {
+        this.comments = event.target.value;
+      },
+      resetForm() {
+        this.email = '';
+        this.subject = '';
+        this.comments = '';
+      },
+      onSubmitHandler(event) {
+        event.preventDefault();
+        let data = {
+          email: this.email,
+          subject: this.subject,
+          comments: this.comments,
+        };
+        fetch('http://localhost:3002/send', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        })
+          .then((response) => response.json())
+          .then((response) => {
+            if (response.status === 'success') {
+              alert('Message Sent.');
+              // this.resetForm();
+            } else if (response.status === 'fail') {
+              alert('Message failed to send.');
+            }
+          });
+      },
+    },
+  };
 </script>
+
+
+<style lang="scss">
+
+.form-inline .form-group {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 0;
+    }
+</style>

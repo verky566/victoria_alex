@@ -1,7 +1,7 @@
 <template>
 	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div class="logo">
-			<img :src="logoURL" alt="Victoria-Alex" /> 
+			<img :src="logoURL" alt="Victoria-Alex"/> 
 		</div>
 
 		<div class="menu-toggle-wrap">
@@ -54,6 +54,7 @@
 	</aside>
 </template>
 
+
 <script setup>
 import { ref } from 'vue'
 import logoURL from '../assets/logo.svg'
@@ -66,9 +67,7 @@ const ToggleMenu = () => {
 	localStorage.setItem("is_expanded", is_expanded.value)
 }
 </script>
-
-
-
+<!--The style scoped attribute limits CSS to this component only -->
 
 <style lang="scss" scoped>
 aside {
