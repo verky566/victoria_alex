@@ -1,19 +1,20 @@
-<template>
-  
-  <div class="app">
-  <Sidebar />
-<RouterView />
-
-  </div>
-</template>
-
 <script setup> 
-//This is display the UI accross multiple pages. 
+//local registration of components
 import Sidebar from './components/Sidebar.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 
+<template>
+  <div class="app">
+<Sidebar />
+<RouterView />
+  </div>
+  <Footer />
+ 
+</template>
 
+<!-- Global Styles  -->
 <style lang="scss">
 :root {
 	--primary: #79caef;
@@ -22,7 +23,7 @@ import Sidebar from './components/Sidebar.vue'
 	--dark: #1e293b;
 	--dark-alt: #334155;
 	--light: #f1f5f9;
-	--sidebar-width: 300px;
+	--sidebar-width: 500px;
 }
 * {
 	margin: 0;
@@ -41,8 +42,8 @@ button {
 	background: none;
 }
 
-.app {
-	display: flex; //body turns into flex
+.app  {
+	display: flex;
 
 	main {
 		flex: 1 1 0;
@@ -53,6 +54,13 @@ button {
 		}
 	}
 }
+
+.footer {
+display: flex;
+		@media (max-width: 1024px) {
+			padding-left: 6rem;
+	
+}
+}
 </style>
 
-//(min-width: 300px)

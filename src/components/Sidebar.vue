@@ -31,28 +31,16 @@
 				<span class="material-icons">email</span>
 				<span class="text">Contact Me</span>
 			</router-link>
-            <router-link to="/resume" class="button">
-				<span class="material-icons">description</span>
-				<span class="text">Resume</span>
-			</router-link>
             <router-link to="/photos" class="button">
 				<span class="material-icons">image</span>
 				<span class="text">Photos</span>
-			</router-link>
-            <router-link to="/skills" class="button">
-				<span class="material-icons">code</span>
-				<span class="text">Skills</span>
 			</router-link>
 		</div>
 
 		<div class="flex"></div>
 		
-		<div class="menu">
-			<router-link to="/settings" class="button">
-				<span class="material-icons">settings</span>
-				<span class="text">Settings</span>
-			</router-link>
-		</div>
+		
+		
 	</aside>
 </template>
 
@@ -214,7 +202,7 @@ const ToggleMenu = () => {
 		}
 	}
 
-	@media (max-width: 1024px) {
+	@media  (max-width: 1024px) {
 		position: absolute;
         //z-index - overlapping layers z-axis
 		z-index: 99;
