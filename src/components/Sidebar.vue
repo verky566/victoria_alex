@@ -1,6 +1,10 @@
 <template>
     <!-- aside element -->
-    
+    <html lang="en">
+		<head>
+			<title>Sidebar</title>
+		</head>
+
 	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div class="logo">
 			<img :src="logoURL" alt="Victoria-Alex"/> 
@@ -38,6 +42,7 @@
 		
 		
 	</aside>
+	</html>
 </template>
 
 
@@ -55,19 +60,15 @@ const ToggleMenu = () => {
 <!--The style scoped attribute limits CSS to this component only -->
 <style lang="scss" scoped>
     aside {
-	display: flex;              //after going above 1024px
+	display: flex;            
 	flex-direction: column;
 	background-color: var(--dark);
 	color: var(--light);
-    //icon size is 32px
 	width: calc(2rem + 32px); 
 	overflow: hidden;
 	min-height: 100vh;
 	padding: 1rem;
 	transition: 0.2s ease-in-out;
-	.flex {
-		flex: 1 1 0%;
-	}
 	.logo {
 		margin-bottom: 1rem;
 		img {
@@ -164,9 +165,7 @@ const ToggleMenu = () => {
 				margin-right: 1rem;
 			}
 		}
-		.footer {
-			opacity: 0;
-		}
+		
 	}
 	@media  (max-width: 1024px) {
 		position: absolute;

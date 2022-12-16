@@ -1,5 +1,9 @@
 <template>
-
+  <!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <title>Biography</title>
+   </head>
     <body>
     <main>
       <div id="app">
@@ -101,6 +105,7 @@
   </div>
 </main>
 </body>
+</html>
 </template>
 
 <script>

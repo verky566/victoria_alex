@@ -1,5 +1,9 @@
 # victoria_alex
 
+CS601 final project using VITE build tool. Created by Victoria Villagome. 
+
+Final project is a portfolio that contains work history, photos, and personal interests. I learned more about web development in this course and Vue 3 framework.
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

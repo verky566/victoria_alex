@@ -3,6 +3,12 @@
 </script>
 
 <template>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Interests</title>
+
+  </head>
   <body>
     <main>
       <div id="app">
@@ -25,6 +31,7 @@
       </div>
     </main>
   </body>
+  </html>
 </template>
 
 

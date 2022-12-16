@@ -8,6 +8,10 @@ const photos = [
 </script>
 
 <template>
+  <!DOCTYPE html>
+  <html lang="en">
+   <head>
+   </head>
   <body>
     <main>
 
@@ -29,6 +33,7 @@ const photos = [
 
   </main>
 </body>
+</html>
 </template>
 
 
