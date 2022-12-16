@@ -31,10 +31,6 @@
 				<span class="material-icons">email</span>
 				<span class="text">Contact Me</span>
 			</router-link>
-            <router-link to="/photos" class="button">
-				<span class="material-icons">image</span>
-				<span class="text">Photos</span>
-			</router-link>
 		</div>
 
 		<div class="flex"></div>

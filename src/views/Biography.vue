@@ -43,7 +43,8 @@
                 </div>
                 <div class="text">
                    
-                    <p>Developing macros to import, convert, and aggregate various file types together. Conducting research using multiple databases.</p>
+                    <p>Developing macros to import, convert, and aggregate various file types together.
+                      Conducting research using multiple databases.</p>
                 </div>
             </div>
 
@@ -54,7 +55,7 @@
                   <h5>2016 - 2018</h5>
                 </div>
                 <div class="text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Designed a workflow system using Nintex Workflow to track multiple CSA reports.</p>
                 </div>
             </div>
         </div>

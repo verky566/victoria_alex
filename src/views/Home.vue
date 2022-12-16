@@ -14,7 +14,7 @@ const photos = [
     <main>
       <div id="app">
     <h1>Home</h1>
-    <p>This is the home page</p>
+    <p>This is the home page which was to contain a photo gallery</p>
     <Swiper>
       <SwiperSlide v-for="photo in photo">
         <img :src="'src/assets/Gallery/${photo}'"/>

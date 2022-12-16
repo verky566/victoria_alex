@@ -13,7 +13,7 @@
   <section>
 
 <video width = "700" title="Snorkeling in Oahu Hobby" controls>
-      <source src="src/assets/Video/Oahu_Snorkel_short.mp4" type= "video/mp4"> </video>
+      <source src="/src/assets/Video/Oahu_Snorkel_short.mp4" type= "video/mp4"> </video>
 
 </section>
       <section>
